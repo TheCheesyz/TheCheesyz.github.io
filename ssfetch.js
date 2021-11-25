@@ -1,26 +1,17 @@
-const CryptoJS = require("crypto-js");
-const encrypt = (text) => {
-  return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(text));
-};
-const decrypt = (data) => {
-  return CryptoJS.enc.Base64.parse(data).toString(CryptoJS.enc.Utf8);
-};
-
-
 var peopleArray = [];
 
 function whoIsMyGuy() {
 	var code = document.getElementById('codeInput').value;
-	document.getElementById("myGuy").innerHTML = decrypt(code);
+	document.getElementById("myGuy").innerHTML = atob(code);
 }
 
 function generateSecrets() {
 	shuffleArray(peopleArray);
 	for(var i = 0; i < array.length; i++){
 		if(i == array.length - 1){
-			peopleArray[array.length - 1].name = encrypt(peopleArray[0].name);
+			peopleArray[array.length - 1].name = btoa(peopleArray[0].name);
 		} else{
-			peopleArray[i].name = encrypt(peopleArray[i+1].name);
+			peopleArray[i].name = btoa(peopleArray[i+1].name);
 		}
 	}
 	console.log(peopleArray);
