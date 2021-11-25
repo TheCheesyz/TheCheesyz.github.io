@@ -7,9 +7,9 @@ function whoIsMyGuy() {
 
 function generateSecrets() {
 	shuffleArray(peopleArray);
-	for(var i = 0; i < array.length; i++){
-		if(i == array.length - 1){
-			peopleArray[array.length - 1].name = btoa(peopleArray[0].name);
+	for(var i = 0; i < peopleArray.length; i++){
+		if(i == peopleArray.length - 1){
+			peopleArray[peopleArray.length - 1].name = btoa(peopleArray[0].name);
 		} else{
 			peopleArray[i].name = btoa(peopleArray[i+1].name);
 		}
