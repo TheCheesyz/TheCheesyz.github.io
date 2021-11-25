@@ -4,8 +4,6 @@ function whoIsMyGuy() {
 			return response.json();
 		})
 		.then(users => {
-			console.log(users);
+			document.getElementById("myGuy").innerHTML=users[0].name;
 		});
 }
-
-//document.getElementById("myGuy").innerHTML="Paragraph changed.";
