@@ -9,10 +9,13 @@ function generateSecrets() {
 	shuffleArray(peopleArray);
 	for(var i = 0; i < peopleArray.length; i++){
 		if(i == peopleArray.length - 1){
-			peopleArray[peopleArray.length - 1].name = btoa(peopleArray[0].name);
+			peopleArray[peopleArray.length - 1].name = peopleArray[0].name;
 		} else{
-			peopleArray[i].name = btoa(peopleArray[i+1].name);
+			peopleArray[i].name = peopleArray[i+1].name;
 		}
+	}
+	for(var i = 0; i < peopleArray.length; i++){
+		peopleArray[i].name = btoa(peopleArray[i].name);
 	}
 	console.log(peopleArray);
 }
