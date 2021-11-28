@@ -18,6 +18,7 @@ function generateSecrets() {
 	for(var i = 0; i < peopleArray.length; i++){
 		peopleArray[i].name = btoa(peopleArray[i].name);
 	}
+	shuffleArray(peopleArray);
 	console.log(peopleArray);
 }
 
